@@ -25,6 +25,9 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.8
+      
+      - name: Install Elasticsearch python module 
+        run: pip install elasticsearch
 
       - name: Test Elasticsearch data
         run: python3 ./test/test.py
@@ -51,6 +54,9 @@ jobs:
         with:
           python-version: 3.8
 
+      - name: Install Elasticsearch python module 
+        run: pip install elasticsearch
+          
       - name: Test Elasticsearch data
         run: python3 ./test/test.py
 
