@@ -19,7 +19,6 @@ jobs:
         run: docker-compose up -d elasticsearch filebeat
 
       - name: Start Zeek
-        require: Start Containers
         run: docker-compose up zeek
 
       - name: Set up Python 3.8
@@ -45,7 +44,6 @@ jobs:
         run: docker-compose up -d elasticsearch
 
       - name: Start evtxtoelk
-        require: Start Containers
         run: docker-compose up evtxtoelk
 
       - name: Set up Python 3.8
