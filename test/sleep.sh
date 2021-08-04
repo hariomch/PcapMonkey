@@ -1,5 +1,5 @@
 #!/bin/sh
 
-sleep 180
+sleep $1
 
 exit 0

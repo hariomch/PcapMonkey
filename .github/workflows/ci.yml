@@ -24,6 +24,9 @@ jobs:
       - name: Start Zeek
         run: docker-compose up zeek
 
+      - name: Sleep
+        run: ./test/sleep.sh 180
+
       - name: Set up Python 3.8
         uses: actions/setup-python@v2
         with:
@@ -52,10 +55,13 @@ jobs:
         run: docker-compose up -d elasticsearch
 
       - name: Sleep
-        run: ./test/sleep.sh
+        run: ./test/sleep.sh 180
 
       - name: Start evtxtoelk
         run: docker-compose up evtxtoelk
+
+      - name: Sleep
+        run: ./test/sleep.sh 180
 
       - name: Set up Python 3.8
         uses: actions/setup-python@v2
@@ -68,7 +74,7 @@ jobs:
       - name: Test Elasticsearch data
         run: |
           cd ./test/
-          python3 test.py
+          python3 test_evtxtoelk.py
 
       - name: Stop Containers
         run: docker-compose down -v      
