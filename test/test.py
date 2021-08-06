@@ -12,10 +12,10 @@ query_body = {
     }
 }
 
-hit_count = 0
-while hit_count != 615:
-    elastic_data = elastic_client.search(index="filebeat*", size=10000, body=query_body)
-    hit_count = len(elastic_data["hits"]["hits"])
+# hit_count = 0
+# while hit_count != 615:
+elastic_data = elastic_client.search(index="filebeat*", size=10000, body=query_body)
+    # hit_count = len(elastic_data["hits"]["hits"])
 
 
 del elastic_data["took"]

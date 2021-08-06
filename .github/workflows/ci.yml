@@ -24,11 +24,11 @@ jobs:
       - name: Sleep
         run: ./test/sleep.sh 180
 
-      - name: Docker ps
-        run: docker-compose ps
+      # - name: Docker ps
+      #   run: docker-compose ps
 
-      - name: Docker Logs
-        run: docker logs -f pcapmonkey_filebeat
+      # - name: Docker Logs
+      #   run: docker logs -f pcapmonkey_filebeat
 
       - name: Copy Assets
         run: cp ./test/assets/test-file.pcap ./pcap/
