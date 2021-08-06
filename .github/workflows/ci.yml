@@ -28,7 +28,10 @@ jobs:
         run: docker-compose up zeek
 
       - name: Sleep
-        run: ./test/sleep.sh 360
+        run: ./test/sleep.sh 180
+
+      - name: Debug
+        run: ls -la ./logs/zeek/
 
       - name: Set up Python 3.8
         uses: actions/setup-python@v2
