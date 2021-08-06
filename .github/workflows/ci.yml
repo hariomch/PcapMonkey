@@ -27,7 +27,7 @@ jobs:
       - name: Docker ps
         run: docker-compose ps
 
-      - name: Docker ps
+      - name: Docker Logs
         run: docker logs -f pcapmonkey_filebeat
 
       - name: Copy Assets
