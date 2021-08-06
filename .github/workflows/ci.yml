@@ -15,11 +15,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Prepare Setup
+        run: ./prepare.sh
+
       - name: Start containers
         run: docker-compose up -d elasticsearch filebeat
 
       - name: Sleep
         run: ./test/sleep.sh 180
+
+      - name: Docker ps
+        run: docker-compose ps
 
       - name: Copy Assets
         run: cp ./test/assets/test-file.pcap ./pcap/
